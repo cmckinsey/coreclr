@@ -6973,7 +6973,7 @@ void                Compiler::gtDispNode(GenTreePtr     tree,
         return;
     }
 
-    if  (tree && printFlags)
+    if  (printFlags)
     {
         /* First print the flags associated with the node */
         switch (tree->gtOper)
@@ -12730,15 +12730,11 @@ CORINFO_FIELD_HANDLE FieldSeqStore::ConstantIndexPseudoField = (CORINFO_FIELD_HA
 
 bool FieldSeqNode::IsFirstElemFieldSeq()
 {
-    if (this == nullptr)
-        return false;
     return m_fieldHnd == FieldSeqStore::FirstElemPseudoField;
 }
 
 bool FieldSeqNode::IsConstantIndexFieldSeq()
 {
-    if (this == nullptr)
-        return false;
     return m_fieldHnd == FieldSeqStore::ConstantIndexPseudoField;
 }
 
